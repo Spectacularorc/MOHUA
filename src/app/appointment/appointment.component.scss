@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+  }
+  
+  .left-section {
+    width: 50%;
+    // background-color: #f0f0f0; /* Light gray background for the left section */
+    padding: 20px;
+  }
+  
+  .right-section {
+    width: 50%;
+    background-color: #d0e8ff; /* Light blue background for the right section */
+    padding: 20px;
+  }

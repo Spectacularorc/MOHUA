@@ -1,0 +1,119 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="https://presentations.gov.in/wp-content/uploads/2020/01/NE_Preview1.png" alt="" width="55" height="40"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Travel Management</a>
+        </li>
+       
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container mt-5">
+    <h2>Travel Scheduler</h2>
+  
+    <!-- Travel Scheduler Form -->
+    <form [formGroup]="travelForm" (ngSubmit)="onSubmit()" class="mb-4">
+      <div class="mb-3">
+        <label for="eventTitle" class="form-label">Event Title</label>
+        <input
+          id="eventTitle"
+          type="text"
+          class="form-control"
+          formControlName="eventTitle"
+          required
+        />
+      </div>
+  
+      <div class="mb-3">
+        <label for="flightDetails" class="form-label">Flight Details</label>
+        <input
+          id="flightDetails"
+          type="text"
+          class="form-control"
+          formControlName="flightDetails"
+          required
+        />
+      </div>
+  
+      <div class="mb-3">
+        <label for="date" class="form-label">Date</label>
+        <input
+          id="date"
+          matInput
+          [matDatepicker]="picker"
+          class="form-control"
+          formControlName="date"
+          required
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </div>
+  
+      <div class="mb-3">
+        <label for="time" class="form-label">Time</label>
+        <input
+          id="time"
+          type="time"
+          class="form-control"
+          formControlName="time"
+          required
+        />
+      </div>
+  
+      <div class="mb-3">
+        <label for="eventDetails" class="form-label">Event Details</label>
+        <textarea
+          id="eventDetails"
+          class="form-control"
+          formControlName="eventDetails"
+          required
+        ></textarea>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  
+    <!-- Calendar Display -->
+    <h3>Scheduled Events</h3>
+    <table class="table table-bordered">
+      <thead class="table-dark">
+        <tr>
+          <th>#</th>
+          <th>Event Title</th>
+          <th>Flight Details</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Event Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let record of travelRecords; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ record.eventTitle }}</td>
+          <td>{{ record.flightDetails }}</td>
+          <td>{{ record.date | date: 'fullDate' }}</td>
+          <td>{{ record.time }}</td>
+          <td>{{ record.eventDetails }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="container mt-3 mx-2">
+    
+      <button class="btn btn-danger" (click)="clearLocalStorage()">Clear Data</button>
+      <!-- <button class="btn btn-warning" (click)="clearSpecificItem('formData')">Clear Form Data</button> -->
+      <!-- <button class="btn btn-primary mx-7" (click)="goToSchedular()">GoTo Schedular</button> -->
+    </div>
+
+  </div>

@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, output } from '@angular/core';
+
+interface SideNavToggle {
+  screenWidth: number;
+  collapsed: boolean;
+}
 
 @Component({
   selector: 'app-root',
@@ -8,4 +13,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'MOHUA';
+
+  isSideNavCollapsed = false;
+  screenWidth = 0;
+// isSideNavCollapsed: boolean;
+
+  // @output onToggleSideNav = new EventEmitter<string>();
+
+  onToggleSideNav(data: SideNavToggle): void{
+    this.screenWidth = data.screenWidth;
+    this.isSideNavCollapsed = data.collapsed;
+  }
 }

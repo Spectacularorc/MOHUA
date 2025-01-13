@@ -1,0 +1,147 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="https://presentations.gov.in/wp-content/uploads/2020/01/NE_Preview1.png" alt="" width="55" height="40"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Travel Management</a>
+          </li>
+         
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  
+
+<div class="card">
+    <div class="card-header text-white bg-primary mb-4">
+        <h2>Travel Management Details</h2>
+    </div>
+    <div class="card-body ">
+        <div class="container overflow-hidden text-center">
+            <!-- <div class="mb-5">
+                <h2>Dak Management(Inward Entry)</h2>
+            </div> -->
+            
+            <form (ngSubmit)="onSubmit()" class="row gx-5">
+              <div class="col">
+                  <div class="mb-5">
+                      <label for="startDate">Travel Date</label>
+                      <input id="startDate" class="form-control" type="date" [(ngModel)]="travelData.date" name="travelDate"/>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="stateSelect" class="form-label">Select State:</label>
+                    <select
+                      class="form-select"
+                      id="stateSelect"
+                      [(ngModel)]="travelData.state"
+                      (change)="onStateChange()"
+                      name="state"
+                    >
+                      <option value="" disabled selected>Select a state</option>
+                      <option *ngFor="let state of states" [value]="state">
+                        {{ state }}
+                      </option>
+                    </select>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="districtSelect" class="form-label">Select District:</label>
+                    <select
+                      class="form-select"
+                      id="districtSelect"
+                      [(ngModel)]="travelData.district"
+                      [disabled]="!districts.length"
+                      name="district"
+                    >
+                      <option value="" disabled selected>Select a district</option>
+                      <option *ngFor="let district of districts" [value]="district">
+                        {{ district }}
+                      </option>
+                    </select>
+                  </div>
+
+                <div class="mb-3">
+                    <label for="timeInput" class="form-label"></label>
+                    <input type="time" class="form-control" id="timeInput" placeholder="time" [(ngModel)]="travelData.time" name="time">
+                </div>
+
+                <div class="mb-8 my-4">
+                    <label for="exampleFormControlInput1" class="form-label">Activity</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter Description of program" [(ngModel)]="travelData.activity" name="activity">
+                  </div>
+
+                  <label for="travelModeSelect" class="form-label">Mode of Travel:</label>
+                  <select class="form-select" id="travelModeSelect" [(ngModel)]="travelData.modeOfTravel" name="modeOfTravel">
+                    <option value="" disabled selected>Select a mode of travel</option>
+                    <option value="car">Car</option>
+                    <option value="bus">Bus</option>
+                    <option value="train">Train</option>
+                    <option value="flight">Flight</option>
+                    <option value="bike">Bike</option>
+                    <option value="walk">Walk</option>
+                  </select>
+                
+                  <div class="col-auto my-4">
+                    <button type="submit" class="btn btn-secondary">Submit</button>
+                  </div>
+              </form>
+             
+            </div>
+          </div>
+
+        <h3>Travel Records</h3>
+        <table class="table table-bordered">
+            <thead class="table-dark">
+            <tr>
+                <th>#</th>
+                <th>Date</th>
+                <th>State</th>
+                <th>District</th>
+                <th>Time</th>
+                <th>Activity</th>
+                <th>Mode of Travel</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let record of travelRecords; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ record.date }}</td>
+                <td>{{ record.state }}</td>
+                <td>{{ record.district }}</td>
+                <td>{{ record.time }}</td>
+                <td>{{ record.activity }}</td>
+                <td>{{ record.modeOfTravel }}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div class="container mt-3 mx-2">
+    
+            <button class="btn btn-danger" (click)="clearLocalStorage()">Clear Data</button>
+            <!-- <button class="btn btn-warning" (click)="clearSpecificItem('formData')">Clear Form Data</button> -->
+            <button class="btn btn-primary mx-7" (click)="goToSchedular()">GoTo Schedular</button>
+          </div>
+          <div class="container mt-4 mx-6">
+          
+          
+        </div>
+    </div>
+
+  
+
+
+
+
+    
+
