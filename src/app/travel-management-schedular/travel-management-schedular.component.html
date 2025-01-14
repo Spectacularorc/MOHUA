@@ -21,99 +21,41 @@
 
 
 <div class="container mt-5">
-    <h2>Travel Scheduler</h2>
-  
-    <!-- Travel Scheduler Form -->
-    <form [formGroup]="travelForm" (ngSubmit)="onSubmit()" class="mb-4">
-      <div class="mb-3">
-        <label for="eventTitle" class="form-label">Event Title</label>
-        <input
-          id="eventTitle"
-          type="text"
-          class="form-control"
-          formControlName="eventTitle"
-          required
-        />
-      </div>
-  
-      <div class="mb-3">
-        <label for="flightDetails" class="form-label">Flight Details</label>
-        <input
-          id="flightDetails"
-          type="text"
-          class="form-control"
-          formControlName="flightDetails"
-          required
-        />
-      </div>
-  
-      <div class="mb-3">
-        <label for="date" class="form-label">Date</label>
-        <input
-          id="date"
-          matInput
-          [matDatepicker]="picker"
-          class="form-control"
-          formControlName="date"
-          required
-        />
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </div>
-  
-      <div class="mb-3">
-        <label for="time" class="form-label">Time</label>
-        <input
-          id="time"
-          type="time"
-          class="form-control"
-          formControlName="time"
-          required
-        />
-      </div>
-  
-      <div class="mb-3">
-        <label for="eventDetails" class="form-label">Event Details</label>
-        <textarea
-          id="eventDetails"
-          class="form-control"
-          formControlName="eventDetails"
-          required
-        ></textarea>
-      </div>
-  
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-  
-    <!-- Calendar Display -->
-    <h3>Scheduled Events</h3>
-    <table class="table table-bordered">
-      <thead class="table-dark">
-        <tr>
-          <th>#</th>
-          <th>Event Title</th>
-          <th>Flight Details</th>
-          <th>Date</th>
-          <th>Time</th>
-          <th>Event Details</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let record of travelRecords; let i = index">
-          <td>{{ i + 1 }}</td>
-          <td>{{ record.eventTitle }}</td>
-          <td>{{ record.flightDetails }}</td>
-          <td>{{ record.date | date: 'fullDate' }}</td>
-          <td>{{ record.time }}</td>
-          <td>{{ record.eventDetails }}</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="container mt-3 mx-2">
-    
-      <button class="btn btn-danger" (click)="clearLocalStorage()">Clear Data</button>
-      <!-- <button class="btn btn-warning" (click)="clearSpecificItem('formData')">Clear Form Data</button> -->
-      <!-- <button class="btn btn-primary mx-7" (click)="goToSchedular()">GoTo Schedular</button> -->
-    </div>
+  <h2 class="text-center">Travel Scheduler</h2>
 
+  <!-- Date Picker -->
+  <div class="form-group mt-3">
+    <label for="date-picker">Select a Date</label>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="selectedDate" id="date-picker" class="form-control">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
   </div>
+
+  <div *ngIf="selectedDate">
+    <h4 class="mt-3">Events for {{ selectedDate | date }}</h4>
+
+    <!-- Event List -->
+    <ul class="list-group">
+      <li *ngFor="let event of getEventsForDate(selectedDate)" class="list-group-item">
+        <strong>{{ event.time }}:</strong>  {{ event.title }}({{ event.details }})
+      </li>
+    </ul>
+
+    <!-- Add Event Form -->
+    <form (ngSubmit)="addEvent()" class="mt-3">
+      <div class="form-group">
+        <label for="event-time">Event Time</label>
+        <input type="time" id="event-time" class="form-control" [(ngModel)]="newEvent.time" name="time" required>
+      </div>
+      <div class="form-group">
+        <label for="event-details">Flight Details </label>
+        <input type="text" id="event-details" class="form-control" [(ngModel)]="newEvent.details" name="details" required>
+      </div>
+      <div class="form-group">
+        <label for="event-title">Event Title</label>
+        <input type="text" id="event-title" class="form-control" [(ngModel)]="newEvent.title" name="title" required>
+      </div>
+      <button type="submit" class="btn btn-primary mt-2">Add Event</button>
+    </form>
+  </div>
+</div>
