@@ -29,6 +29,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import {ReactiveFormsModule } from '@angular/forms';
+import { RegistrationComponent } from './registration/registration.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -52,7 +54,9 @@ import {ReactiveFormsModule } from '@angular/forms';
     LeftSectionAppointmentComponent,
     RightSectionAppointmentComponent,
     DakManagementOutwardComponent,
-    TravelManagementSchedularComponent
+    TravelManagementSchedularComponent,
+    RegistrationComponent,
+    LoginComponent
   
   ],
   imports: [

@@ -9,9 +9,13 @@ import { SecurityAndAccessibilityComponent } from './security-and-accessibility/
 import { NotificationComponent } from './notification/notification.component';
 import { DakManagementOutwardComponent } from './dak-management-outward/dak-management-outward.component';
 import { TravelManagementSchedularComponent } from './travel-management-schedular/travel-management-schedular.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
+  {path: '', redirectTo: 'login', pathMatch: 'full'},
+  {path: 'registration', component: RegistrationComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'appointment', component: AppointmentComponent},
   {path: 'dak-management', component: DakManagementComponent},
