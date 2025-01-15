@@ -20,4 +20,8 @@ export class RegistrationComponent {
     this.router.navigate(['/login']); // Redirect to login page
 }
 
+LogIn() {
+  this.router.navigate(['/login']);
+}
+
 }

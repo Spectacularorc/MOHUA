@@ -30,4 +30,8 @@ export class LoginComponent {
       alert('No registered user found. Please register first.');
     }
   }
+
+  registration() {
+    this.router.navigate(['/registration']);
+}
 }

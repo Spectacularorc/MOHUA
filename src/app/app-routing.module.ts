@@ -14,11 +14,13 @@ import { LoginComponent } from './login/login.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 
 const routes: Routes = [
+
+  {path: '', redirectTo: 'login', pathMatch: 'full'},
+  {path: 'registration', component: RegistrationComponent},
+  {path: 'login', component: LoginComponent},
   {path: '', component: SidenavComponent, children:[
     
-    {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
-    {path: 'registration', component: RegistrationComponent},
-    {path: 'login', component: LoginComponent},
+    {path: '', redirectTo: 'dashboard', pathMatch: 'full'},  
     {path: 'dashboard', component: DashboardComponent},
     {path: 'appointment', component: AppointmentComponent},
     {path: 'dak-management', component: DakManagementComponent},

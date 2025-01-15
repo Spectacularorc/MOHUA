@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<!-- <div class="container mt-5">
     <h2>Login</h2>
     <form (ngSubmit)="login()">
       <div class="form-group">
@@ -10,6 +10,33 @@
         <input type="password" id="password" class="form-control" [(ngModel)]="loginData.password" name="password" required>
       </div>
       <button type="submit" class="btn btn-primary mt-3">Login</button>
+      <button  type="submit" class="btn btn-danger mx-3 mt-3" (click)="registration()">Registration</button>
     </form>
-  </div>
+  </div> -->
+
+  
+    <section class="container">
+        <div class="login-container">
+            <div class="circle circle-one"></div>
+            <div class="form-container">
+                <img src="https://raw.githubusercontent.com/hicodersofficial/glassmorphism-login-form/master/assets/illustration.png" alt="illustration" class="illustration" />
+                <h1 class="opacity">LOGIN</h1>
+                <form (ngSubmit)="login()">
+                    <input type="text" placeholder="USERNAME" [(ngModel)]="loginData.username" name="username"/>
+                    <input type="password" placeholder="PASSWORD" [(ngModel)]="loginData.password" name="password"/>
+                    <button class="opacity">LOGIN</button>
+                    <button  type="submit" class="btn btn-danger mx-3 mt-3" (click)="registration()">Registration</button>
+                
+                <div class="register-forget opacity">
+                    <!-- <a href="">REGISTER</a> -->
+                    <a href="">FORGOT PASSWORD</a>
+                </div>
+                </form>
+            </div>
+            <div class="circle circle-two"></div>
+        </div>
+        <div class="theme-btn-container"></div>
+    </section>
+
+
   
