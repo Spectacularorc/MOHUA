@@ -8,7 +8,6 @@ import { Component, Input } from '@angular/core';
   styleUrl: './body.component.scss'
 })
 export class BodyComponent {
-
   @Input() collapsed = false;
   @Input() screenWidth = 0;
 
@@ -20,6 +19,5 @@ export class BodyComponent {
       styleClass = 'body-md-screen';
     }
     return styleClass;
-
-  }
+}
 }

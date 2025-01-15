@@ -1,22 +1,66 @@
-<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed': ''">
-    <div class="logo-container">
-        <button class="logo" (click)="toggleCollapse()">M</button>
-        <div class="logo-text" *ngIf="collapsed">Ministry</div>
-        <button class="btn-close" (click)="closeSidenav()" @rotate >
-            <i class="fal fa-times close icon" *ngIf="collapsed"></i>
-        </button>
+<div class="d-flex">
+    <!-- Sidebar -->
+    <div class="bg-dark text-white vh-100 p-3" style="width: 250px;">
+      <!-- Logo Section -->
+      <div class="mb-4 text-center">
+        <img src="https://presentations.gov.in/wp-content/uploads/2020/01/NE_Preview1.png" alt="Logo" class="img-fluid mb-2" style="max-height: 60px;">
+        <h5>MINISTRY OF HOUSING AND URBAN AFFAIRS</h5>
+      </div>
+  
+      <!-- Home Section -->
+      <h6 class="text-uppercase mt-4">Home</h6>
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/dashboard" routerLinkActive="active">
+            <i class="bi bi-speedometer2"></i> Dashboard
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/appointment" routerLinkActive="active">
+            <i class="bi bi-calendar-check"></i> Appointment
+          </a>
+        </li>
+      </ul>
+  
+      <!-- Management Section -->
+      <h6 class="text-uppercase mt-4">Management</h6>
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/dak-management" routerLinkActive="active">
+            <i class="bi bi-folder"></i> Dak Management
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/travel-management" routerLinkActive="active">
+            <i class="bi bi-geo-alt"></i> Travel Management
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/reports-analytics" routerLinkActive="active">
+            <i class="bi bi-bar-chart"></i> Reports & Analytics
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/security-accessibility" routerLinkActive="active">
+            <i class="bi bi-shield-lock"></i> Security & Accessibility
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/notifications" routerLinkActive="active">
+            <i class="bi bi-bell"></i> Notification
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/logout">
+            <i class="bi bi-box-arrow-right"></i> Logout
+          </a>
+        </li>
+      </ul>
     </div>
-
-
-<ul class="sidenav-nav">
-    <li class="sidenav-nav-item" *ngFor="let data of navData">
-        <a class="sidenav-nav-link" [routerLink]="[data.routeLink]"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{exact: true}"
-        >
-            <i class="sidenav-link-icon" [class]="data.icon"></i>
-            <span class="sidenav-link-text" *ngIf="collapsed">{{data.label}}</span>
-        </a>
-    </li>
-</ul>
-</div>
+  
+    <!-- Main Content -->
+    <div class="flex-grow-1 p-4">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  

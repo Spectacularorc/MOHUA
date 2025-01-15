@@ -11,20 +11,24 @@ import { DakManagementOutwardComponent } from './dak-management-outward/dak-mana
 import { TravelManagementSchedularComponent } from './travel-management-schedular/travel-management-schedular.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'login', pathMatch: 'full'},
-  {path: 'registration', component: RegistrationComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'dashboard', component: DashboardComponent},
-  {path: 'appointment', component: AppointmentComponent},
-  {path: 'dak-management', component: DakManagementComponent},
-  {path: 'travel-management', component: TravelManagementComponent},
-  {path: 'reports-and-analytics', component: ReportsAndAnalysisComponent},
-  {path: 'security-accessibility', component: SecurityAndAccessibilityComponent},
-  {path: 'notification', component: NotificationComponent},
-  {path: 'dak-management-outward', component: DakManagementOutwardComponent},
-  {path: 'travel-management-schedular', component: TravelManagementSchedularComponent}
+  {path: '', component: SidenavComponent, children:[
+    
+    {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
+    {path: 'registration', component: RegistrationComponent},
+    {path: 'login', component: LoginComponent},
+    {path: 'dashboard', component: DashboardComponent},
+    {path: 'appointment', component: AppointmentComponent},
+    {path: 'dak-management', component: DakManagementComponent},
+    {path: 'travel-management', component: TravelManagementComponent},
+    {path: 'reports-and-analytics', component: ReportsAndAnalysisComponent},
+    {path: 'security-accessibility', component: SecurityAndAccessibilityComponent},
+    {path: 'notification', component: NotificationComponent},
+    {path: 'dak-management-outward', component: DakManagementOutwardComponent},
+    {path: 'travel-management-schedular', component: TravelManagementSchedularComponent}
+  ]},
 ];
 
 @NgModule({
