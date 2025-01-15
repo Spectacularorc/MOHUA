@@ -12,7 +12,6 @@ import { TravelManagementComponent } from './travel-management/travel-management
 import { ReportsAndAnalysisComponent } from './reports-and-analysis/reports-and-analysis.component';
 import { SecurityAndAccessibilityComponent } from './security-and-accessibility/security-and-accessibility.component';
 import { NotificationComponent } from './notification/notification.component';
-import { LogOutComponent } from './log-out/log-out.component';
 import { TopWidgetsComponent } from './top-widgets/top-widgets.component';
 import { SalesByMonthComponent } from './sales-by-month/sales-by-month.component';
 import { SalesByCategoryComponent } from './sales-by-category/sales-by-category.component';
@@ -29,8 +28,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import {ReactiveFormsModule } from '@angular/forms';
-import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 
 @NgModule({
@@ -45,7 +44,6 @@ import { LoginComponent } from './login/login.component';
     ReportsAndAnalysisComponent,
     SecurityAndAccessibilityComponent,
     NotificationComponent,
-    LogOutComponent,
     TopWidgetsComponent,
     SalesByMonthComponent,
     SalesByCategoryComponent,
@@ -55,8 +53,8 @@ import { LoginComponent } from './login/login.component';
     RightSectionAppointmentComponent,
     DakManagementOutwardComponent,
     TravelManagementSchedularComponent,
-    RegistrationComponent,
-    LoginComponent
+    LoginComponent,
+    RegistrationComponent
   
   ],
   imports: [

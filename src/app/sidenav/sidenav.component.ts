@@ -1,4 +1,5 @@
 import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 // import { navbarData } from './nav-data';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
@@ -15,6 +16,17 @@ interface SideNavToggle {
   styleUrl: './sidenav.component.scss'
 })
 export class SidenavComponent {
+  constructor(private router: Router) {}
+  
+
+  logout() {
+
+    const confirmed = confirm('Are you sure you want to logout?');
+    if (confirmed) {
+      this.router.navigate(['/login']); // Redirect to login page
+      alert('You have been logged out.');
+    }
+  }
 
     // @Output() onToggleSideNav: EventEmitter<SideNavToggle> = new EventEmitter();
     // collapsed = false;
