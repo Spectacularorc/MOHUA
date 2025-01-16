@@ -1,12 +1,12 @@
-import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 // import { navbarData } from './nav-data';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
-interface SideNavToggle {
-  screenWidth: number;
-  collapsed: boolean;
-}
+// interface SideNavToggle {
+//   screenWidth: number;
+//   collapsed: boolean;
+// }
 
 @Component({
   selector: 'app-sidenav',
@@ -15,9 +15,16 @@ interface SideNavToggle {
   templateUrl: './sidenav.component.html',
   styleUrl: './sidenav.component.scss'
 })
-export class SidenavComponent {
+export class SidenavComponent implements OnInit{
+  username: string = '';
   constructor(private router: Router) {}
   
+  ngOnInit(): void {
+    const storedUsername = localStorage.getItem('username');
+    if (storedUsername) {
+      this.username = storedUsername;
+    }
+  }
 
   logout() {
 
@@ -27,6 +34,18 @@ export class SidenavComponent {
       alert('You have been logged out.');
     }
   }
+
+  
+  
+
+
+  // logout() {
+  //   localStorage.removeItem('username');
+  //   this.router.navigate(['/login']);
+  // }
+}
+
+
 
     // @Output() onToggleSideNav: EventEmitter<SideNavToggle> = new EventEmitter();
     // collapsed = false;
@@ -55,4 +74,4 @@ export class SidenavComponent {
     //   this.collapsed = false
     //   this.onToggleSideNav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth})
     // }
-}
+

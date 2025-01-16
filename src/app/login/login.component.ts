@@ -15,6 +15,7 @@ export class LoginComponent {
 
   login() {
     const storedUser = localStorage.getItem('user');
+    
     if (storedUser) {
       const user = JSON.parse(storedUser);
       if (
