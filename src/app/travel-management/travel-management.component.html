@@ -99,44 +99,58 @@
              
             </div>
           </div>
-
-        <h3>Travel Records</h3>
-        <table class="table table-bordered">
-            <thead class="table-dark">
-            <tr>
-                <th>#</th>
-                <th>Date</th>
-                <th>State</th>
-                <th>District</th>
-                <th>Time</th>
-                <th>Activity</th>
-                <th>Mode of Travel</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr *ngFor="let record of travelRecords; let i = index">
-                <td>{{ i + 1 }}</td>
-                <td>{{ record.date }}</td>
-                <td>{{ record.state }}</td>
-                <td>{{ record.district }}</td>
-                <td>{{ record.time }}</td>
-                <td>{{ record.activity }}</td>
-                <td>{{ record.modeOfTravel }}</td>
-            </tr>
-            </tbody>
-        </table>
-
-        <div class="container mt-3 mx-2">
-    
-            <button class="btn btn-danger" (click)="clearLocalStorage()">Clear Data</button>
-            <!-- <button class="btn btn-warning" (click)="clearSpecificItem('formData')">Clear Form Data</button> -->
-            <button class="btn btn-primary mx-7" (click)="goToSchedular()">GoTo Schedular</button>
-          </div>
-          <div class="container mt-4 mx-6">
-          
-          
         </div>
-    </div>
+
+        <div class="card my-5">
+          <div class="card-header text-white bg-primary mb-3">
+            <h3>Travel Records</h3>
+        </div>
+        <div class="card-body ">
+          <div class="container overflow-hidden text-center">
+            <table class="table table-bordered">
+              <thead class="table-dark">
+              <tr>
+                  <th>#</th>
+                  <th>Date</th>
+                  <th>State</th>
+                  <th>District</th>
+                  <th>Time</th>
+                  <th>Activity</th>
+                  <th>Mode of Travel</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let record of travelRecords; let i = index">
+                  <td>{{ i + 1 }}</td>
+                  <td>{{ record.date }}</td>
+                  <td>{{ record.state }}</td>
+                  <td>{{ record.district }}</td>
+                  <td>{{ record.time }}</td>
+                  <td>{{ record.activity }}</td>
+                  <td>{{ record.modeOfTravel }}</td>
+              </tr>
+              </tbody>
+          </table>
+  
+          <div class="container mt-3 mx-2">
+      
+              <button class="btn btn-danger" (click)="clearLocalStorage()">Clear Data</button>
+              <!-- <button class="btn btn-warning" (click)="clearSpecificItem('formData')">Clear Form Data</button> -->
+              <button class="btn btn-primary mx-7" (click)="goToSchedular()">GoTo Schedular</button>
+            </div>
+            <div class="container mt-4 mx-6">
+            
+            
+          </div>
+          </div>
+        </div>
+
+        </div>
+
+        
+        
+    
+
 
   
 
