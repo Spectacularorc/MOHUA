@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+// import dayGridPlugin from '@fullcalendar/daygrid';
+// import interactionPlugin from '@fullcalendar/interaction';
 
 @Component({
   selector: 'app-appointment',
@@ -8,5 +10,6 @@ import { Component } from '@angular/core';
   styleUrl: './appointment.component.scss'
 })
 export class AppointmentComponent {
+
 
 }

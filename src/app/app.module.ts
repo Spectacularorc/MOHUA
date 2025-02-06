@@ -32,6 +32,7 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +68,8 @@ import { RegistrationComponent } from './registration/registration.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
   
 
   ],

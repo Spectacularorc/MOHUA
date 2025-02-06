@@ -36,16 +36,19 @@
   </nav> -->
 
   
-  <div class="container mt-4 mx-1">
+  <!-- <div class="container mt-4 mx-5">
     
     <button class="btn btn-secondary" (click)="goToIn()">GoTo Inward Entry</button>
-  </div>
+  </div> -->
 
-<div class="card">
+<div class="card mx-5">
     <div class="card-header text-white bg-primary mb-4">
-        <h2>Dak Management (Outward Entry)</h2>
-    </div>
-    <div class="card-body ">
+      <div class="d-flex justify-content-between align-items-center">
+        <h2 class="card-title">Dak Management</h2>
+        <button class="btn btn-primary" (click)="goToIn()">GoTo Inward Entry>></button>
+      </div>
+    </div> 
+    <div class="card-body mx-5">
         <div class="container overflow-hidden text-center">
           
             
@@ -59,7 +62,7 @@
                     <label for="exampleFormControlInput1" class="form-label">Designation</label>
                     <input type="email" class="form-control" id="exampleFormControlInput1" [(ngModel)]="formData.designation" name="designation">
                   </div>
-                <div class="mb-5">
+                <div class="mb-5 my-5">
                     <label for="startDate">Letter Date</label>
                     <input id="startDate" class="form-control" type="date" [(ngModel)]="formData.date" name="date" />
                   </div>
@@ -100,7 +103,7 @@
                     <option value="7">Individuals</option>
                   </select>
 
-                  <div class="mb-5 my-3">
+                  <div class="mb-5 my-5">
                     <label for="exampleFormControlInput1" class="form-label">Letter No</label>
                     <input type="email" class="form-control" id="exampleFormControlInput1" [(ngModel)]="formData.letterNo" name="letterNo">
                   </div>
@@ -111,11 +114,11 @@
 </div>
   
 
-<div class="card my-5">
+<div class="card my-5 mx-5">
   <div class="card-header text-white bg-primary mb-4">
     <h3>Stored Data</h3>
   </div>
-  <div class="card-body ">
+  <div class="card-body mx-5">
       <div class="container overflow-hidden text-center">
         <table class="table table-bordered">
           <thead class="table-dark">

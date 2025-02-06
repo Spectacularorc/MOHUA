@@ -1,7 +1,7 @@
 
 <div class="d-flex">
     <!-- Sidebar -->
-    <div class="bg-dark text-white vh-100 p-3" style="width: 250px; position: fixed; height: 100%;">
+    <div class="bg-secondary text-white vh-100 p-3" style="width: 250px; position: fixed; height: 100%;">
         <!-- Logo Section -->
         <div class="mb-4 text-center">
           <!-- <img src="https://presentations.gov.in/wp-content/uploads/2020/01/NE_Preview1.png" alt="Logo" class="img-fluid mb-2" style="max-height: 60px;"> -->
@@ -10,41 +10,12 @@
     
         <div class="nav-item my-2">
           <ul class="nav flex-column">
-            <li class="nav-item my-2">
-              <a class="nav-link text-white" routerLink="/dashboard">
-                <i class="bi bi-speedometer2"></i> Dashboard
+            <li *ngFor="let item of menuItems" class="nav-item my-2">
+              <a [routerLink]="item.link" class="nav-link text-white" >
+                <i class="bi me-2" [ngClass]="item.icon"></i> {{ item.name }}
               </a>
             </li>
-            <li class="nav-item my-2">
-              <a class="nav-link text-white" routerLink="/appointment">
-                <i class="bi bi-calendar-check"></i> Appointment
-              </a>
-            </li>
-            <li class="nav-item my-2">
-              <a class="nav-link text-white" routerLink="/dak-management">
-                <i class="bi bi-folder"></i> Dak Management
-              </a>
-            </li>
-            <li class="nav-item my-2">
-              <a class="nav-link text-white" routerLink="/travel-management">
-                <i class="bi bi-geo-alt"></i> Travel Management
-              </a>
-            </li>
-            <li class="nav-item my-2">
-              <a class="nav-link text-white" routerLink="/reports-analytics">
-                <i class="bi bi-bar-chart"></i> Reports & Analytics
-              </a>
-            </li>
-            <li class="nav-item my-2">
-              <a class="nav-link text-white" routerLink="/security-accessibility">
-                <i class="bi bi-shield-lock"></i> Security & Accessibility
-              </a>
-            </li>
-            <li class="nav-item my-2">
-              <a class="nav-link text-white" routerLink="/notifications">
-                <i class="bi bi-bell"></i> Notification
-              </a>
-            </li>
+      
             <li class="nav-item mt-auto">
               <button class="btn btn-danger my-5 w-100" (click)="logout()">
                 <i class="bi bi-box-arrow-right"></i> Logout
@@ -78,14 +49,14 @@
             <!-- Search Box in Center -->
             <form class="d-flex mx-auto" style="width: 50%;">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
+              <button class="btn btn-outline-primary" type="submit">Search</button>
             </form>
             
             
             
             <!-- User Profile on Right -->
             <div class="dropdown ms-auto">
-              <button class="btn btn-light dropdown-toggle" type="button" id="logoDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              <button class="btn btn-light dropdown-toggle" type="button" id="logoDropdown" data-bs-toggle="dropdown" aria-expanded="true">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR81iX4Mo49Z3oCPSx-GtgiMAkdDop2uVmVvw&s" alt="User" class="rounded-circle me-2" style="height: 40px; width: 40px;">
               </button>
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="logoDropdown">

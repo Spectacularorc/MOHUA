@@ -16,6 +16,18 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   styleUrl: './sidenav.component.scss'
 })
 export class SidenavComponent implements OnInit{
+
+  menuItems = [
+    { name: 'Dashboard', icon: 'fal fa-home', link: '/dashboard' },
+    { name: 'Appointment', icon: 'fal fa-calendar-check', link: '/appointment' },
+    { name: 'Dak Management', icon: 'fal fa-folder', link: '/dak-management' },
+    { name: 'Travel Management', icon: 'fal fa-tags', link: '/travel-management' },
+    { name: 'Reports & Analytics', icon: 'fal fa-file', link: '/reports' },
+    { name: 'Security & Accessibility', icon: 'fal fa-shield', link: '/security' },
+    { name: 'Notifications', icon: 'fal fa-bell', link: '/notifications' }
+  ];
+
+[x: string]: any;
   username: string = '';
   constructor(private router: Router) {}
   
@@ -34,6 +46,9 @@ export class SidenavComponent implements OnInit{
       alert('You have been logged out.');
     }
   }
+
+
+
 
   
   

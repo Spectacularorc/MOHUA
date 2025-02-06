@@ -21,23 +21,26 @@
 
   
 
-<div class="card my-0">
-    <div class="card-header text-white bg-primary mb-3">
-        <h2>Travel Management Details</h2>
+<div class="card my-0 mx-5">
+  <div class="card-header text-white bg-primary mb-4">
+    <div class="d-flex justify-content-between align-items-center">
+      <h2 class="card-title">Travel Management Details</h2>
+      <button class="btn btn-primary mx-7" (click)="goToSchedular()">GoTo Schedular>></button>
     </div>
-    <div class="card-body ">
+  </div> 
+    <div class="card-body mx-5">
         <div class="container overflow-hidden text-center">
             <!-- <div class="mb-5">
                 <h2>Dak Management(Inward Entry)</h2>
             </div> -->
             
             <form (ngSubmit)="onSubmit()" class="row gx-5">
-              <div class="col">
+                <div class="col">
                   <div class="mb-5">
                       <label for="startDate">Travel Date</label>
                       <input id="startDate" class="form-control" type="date" [(ngModel)]="travelData.date" name="travelDate"/>
                     </div>
-                </div>
+                
 
                 <div class="mb-3">
                     <label for="stateSelect" class="form-label">Select State:</label>
@@ -55,7 +58,7 @@
                     </select>
                   </div>
 
-                  <div class="mb-3">
+                  <div class="mb-3 my-5">
                     <label for="districtSelect" class="form-label">Select District:</label>
                     <select
                       class="form-select"
@@ -71,41 +74,48 @@
                     </select>
                   </div>
 
-                <div class="mb-3">
+                  <div class="mb-3 my-5">
                     <label for="timeInput" class="form-label"></label>
                     <input type="time" class="form-control" id="timeInput" placeholder="time" [(ngModel)]="travelData.time" name="time">
                 </div>
 
-                <div class="mb-8 my-4">
-                    <label for="exampleFormControlInput1" class="form-label">Activity</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter Description of program" [(ngModel)]="travelData.activity" name="activity">
-                  </div>
-
-                  <label for="travelModeSelect" class="form-label">Mode of Travel:</label>
-                  <select class="form-select" id="travelModeSelect" [(ngModel)]="travelData.modeOfTravel" name="modeOfTravel">
-                    <option value="" disabled selected>Select a mode of travel</option>
-                    <option value="car">Car</option>
-                    <option value="bus">Bus</option>
-                    <option value="train">Train</option>
-                    <option value="flight">Flight</option>
-                    <option value="bike">Bike</option>
-                    <option value="walk">Walk</option>
-                  </select>
-                
                   <div class="col-auto my-4">
                     <button type="submit" class="btn btn-secondary">Submit</button>
                   </div>
+                </div>
+
+                <div class="col">
+                  <div class="mb-1">
+                      <label for="exampleFormControlInput1" class="form-label">Activity</label>
+                      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter Description of program" [(ngModel)]="travelData.activity" name="activity">
+                    </div>
+                    
+                  <div class="my-5">
+                    <label for="travelModeSelect" class="form-label">Mode of Travel:</label>
+                    <select class="form-select" id="travelModeSelect" [(ngModel)]="travelData.modeOfTravel" name="modeOfTravel">
+                      <option value="" disabled selected>Select a mode of travel</option>
+                      <option value="car">Car</option>
+                      <option value="bus">Bus</option>
+                      <option value="train">Train</option>
+                      <option value="flight">Flight</option>
+                      <option value="bike">Bike</option>
+                      <option value="walk">Walk</option>
+                    </select>
+                  </div>
+                  
+                    
+                </div>
               </form>
              
-            </div>
           </div>
-        </div>
+      </div>
+      </div>
 
-        <div class="card my-5">
+        <div class="card my-5 mx-5">
           <div class="card-header text-white bg-primary mb-3">
             <h3>Travel Records</h3>
         </div>
-        <div class="card-body ">
+        <div class="card-body mx-5">
           <div class="container overflow-hidden text-center">
             <table class="table table-bordered">
               <thead class="table-dark">
@@ -136,7 +146,7 @@
       
               <button class="btn btn-danger" (click)="clearLocalStorage()">Clear Data</button>
               <!-- <button class="btn btn-warning" (click)="clearSpecificItem('formData')">Clear Form Data</button> -->
-              <button class="btn btn-primary mx-7" (click)="goToSchedular()">GoTo Schedular</button>
+              
             </div>
             <div class="container mt-4 mx-6">
             
