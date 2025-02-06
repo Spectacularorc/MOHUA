@@ -16,11 +16,11 @@
               </a>
             </li>
       
-            <li class="nav-item mt-auto">
+            <!-- <li class="nav-item mt-auto">
               <button class="btn btn-danger my-5 w-100" (click)="logout()">
                 <i class="bi bi-box-arrow-right"></i> Logout
               </button>
-            </li>
+            </li> -->
         </ul>
         </div>
         
@@ -38,6 +38,10 @@
             <!-- <img src="assets/logo.png" alt="Logo" style="height: 40px;"> -->
              
           </a>
+
+          <div class="spinner-grow text-secondary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
       
           <!-- Toggler for Mobile View -->
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,10 +63,13 @@
               <button class="btn btn-light dropdown-toggle" type="button" id="logoDropdown" data-bs-toggle="dropdown" aria-expanded="true">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR81iX4Mo49Z3oCPSx-GtgiMAkdDop2uVmVvw&s" alt="User" class="rounded-circle me-2" style="height: 40px; width: 40px;">
               </button>
-              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="logoDropdown">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="logoDropdown">   
+                  <button class="btn btn-danger my-5 w-100" (click)="logout()">
+                    <i class="bi bi-box-arrow-right"></i> Logout
+                  </button>
+                
+                  <!-- <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li> -->
               </ul>
           </div>
           </div>
