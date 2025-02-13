@@ -30,6 +30,7 @@ import { MatInputModule } from '@angular/material/input';
 import {ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
 
 
 
@@ -69,6 +70,7 @@ import { RegistrationComponent } from './registration/registration.component';
     MatNativeDateModule,
     MatInputModule,
     ReactiveFormsModule,
+    FullCalendarModule
 
   
 

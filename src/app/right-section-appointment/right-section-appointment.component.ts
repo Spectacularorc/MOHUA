@@ -8,31 +8,35 @@ import { Component } from '@angular/core';
   styleUrl: './right-section-appointment.component.scss'
 })
 export class RightSectionAppointmentComponent {
-  selectedDate: Date | null = null;
-  events: { date: string, time: string, mobile: string, name: string }[] = [];
-  newEvent = { time: '', mobile: '', name: '' };
+  // visitor = { name: '', mobile: '', vehicle: '', date: '', fromTime: '', toTime: '', gate: '' };
+  // visitorsList: any[] = [];
 
-  // Add event to selected date
-  addEvent() {
-    if (this.selectedDate && this.newEvent.time && this.newEvent.mobile && this.newEvent.name) {
-      const eventDate = this.selectedDate.toISOString().split('T')[0];  // Format date as YYYY-MM-DD
-      const newEvent = {
-        date: eventDate,
-        time: this.newEvent.time,
-        mobile: this.newEvent.mobile,
-        name: this.newEvent.name
+  // constructor() {
+  //   this.loadVisitors();
+  // }
 
-      };
-      this.events.push(newEvent);
-      this.newEvent = { time: '', mobile: '', name: '' }; // Reset form
-    } else {
-      alert('Please select a date and fill in the event details.');
-    }
-  }
+  // // Check if new visit conflicts with existing ones
+  
 
-  // Get events for the selected date
-  getEventsForDate(date: Date): { time: string, mobile: string, name: string }[] {
-    const formattedDate = date.toISOString().split('T')[0]; // Format selected date to YYYY-MM-DD
-    return this.events.filter(event => event.date === formattedDate);
-  }
+  
+
+  // // Load visitors from Local Storage
+  // loadVisitors() {
+  //   const storedVisitors = localStorage.getItem('visitors');
+  //   if (storedVisitors) {
+  //     this.visitorsList = JSON.parse(storedVisitors);
+  //   }
+  // }
+
+  // // Delete a visit
+  // deleteVisit(index: number) {
+  //   this.visitorsList.splice(index, 1);
+  //   localStorage.setItem('visitors', JSON.stringify(this.visitorsList));
+  // }
+
+  // // Reset form
+  // resetForm() {
+  //   this.visitor = { name: '', mobile: '', vehicle: '', date: '', fromTime: '', toTime: '', gate: '' };
+  // }
 }
+

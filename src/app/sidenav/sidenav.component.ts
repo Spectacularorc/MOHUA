@@ -23,7 +23,7 @@ export class SidenavComponent implements OnInit{
     { name: 'Dak Management', icon: 'fal fa-folder', link: '/dak-management' },
     { name: 'Travel Management', icon: 'fal fa-tags', link: '/travel-management' },
     { name: 'Reports & Analytics', icon: 'fal fa-file', link: '/reports' },
-    { name: 'Security & Accessibility', icon: 'fal fa-shield', link: '/security' },
+    { name: 'Security & Accessibility', icon: 'fas fa-shield-alt', link: '/security' },
     { name: 'Notifications', icon: 'fal fa-bell', link: '/notifications' }
   ];
 

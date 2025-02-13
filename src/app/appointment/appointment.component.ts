@@ -10,6 +10,6 @@ import { Component } from '@angular/core';
   styleUrl: './appointment.component.scss'
 })
 export class AppointmentComponent {
-
+  
 
 }

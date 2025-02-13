@@ -1,59 +1,71 @@
+<div class="container mt-4">
+  <h2 class="text-center">Visitor Scheduler</h2>
 
-
-<div class="card">
-    <div class="card-header text-white bg-primary mb-3">
-        <h2>Book Visitor Appointment</h2>
+  <!-- Visitor Form -->
+  <form (submit)="scheduleVisit($event)" class="row g-3">
+    <div class="col-md-4">
+      <label class="form-label">Visitor Name</label>
+      <input type="text" class="form-control" [(ngModel)]="visitor.name" name="name" required>
     </div>
-    <div class="card-body ">
-        <div class="container overflow-hidden text-center">
-            <!-- <div class="mb-5">
-                <h2>Dak Management(Inward Entry)</h2>
-            </div> -->
-            
-            <div class="row gx-10">
-              <div class="col">
-                <div class="mb-5">
-                    <label for="exampleFormControlInput1" class="form-label"></label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Visitor Name">
-                  </div>
-                <div class="mb-5">
-                    <label for="exampleFormControlInput1" class="form-label"></label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Visitor Mobile No">
-                  </div>
-                <div class="mb-5">
-                    <label for="exampleFormControlInput1" class="form-label"></label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Vehicle No">
-                  </div>
-                <div class="mb-5">
-                    <label for="startDate"></label>
-                    <input id="startDate" class="form-control" type="date" />
-                  </div>
-                  <div class="mb-3">
-                    <label for="timeInput" class="form-label"></label>
-                    <input type="time" class="form-control" id="timeInput" placeholder="time">
-                  </div>
-                  <div class="mb-5">
-                    <label for="exampleFormControlInput1" class="form-label"></label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Gate No">
-                  </div>  
-                  <div class="mb-5">
-                    <label for="exampleFormControlInput1" class="form-label"></label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="reference">
-                  </div>  
-            
-                 
-                  <div class="col-auto my-4">
-                    <button type="submit" class="btn btn-secondary">Submit</button>
-                  </div>
-              </div>
-              
-            </div>
-          </div>
+    <div class="col-md-4">
+      <label class="form-label">Mobile Number</label>
+      <input type="tel" class="form-control" [(ngModel)]="visitor.mobile" name="mobile" required>
     </div>
-  </div>
+    <div class="col-md-4">
+      <label class="form-label">Vehicle Number</label>
+      <input type="text" class="form-control" [(ngModel)]="visitor.vehicle" name="vehicle" required>
+    </div>
+    <div class="col-md-4">
+      <label class="form-label">Date</label>
+      <input type="date" class="form-control" [(ngModel)]="visitor.date" name="date" required>
+    </div>
+    <div class="col-md-4">
+      <label class="form-label">From Time</label>
+      <input type="time" class="form-control" [(ngModel)]="visitor.fromTime" name="fromTime" required>
+    </div>
+    <div class="col-md-4">
+      <label class="form-label">To Time</label>
+      <input type="time" class="form-control" [(ngModel)]="visitor.toTime" name="toTime" required>
+    </div>
+    <div class="col-md-4">
+      <label class="form-label">Gate Number</label>
+      <input type="text" class="form-control" [(ngModel)]="visitor.gate" name="gate" required>
+    </div>
+    <div class="col-12 text-center">
+      <button type="submit" class="btn btn-primary">Schedule Visit</button>
+    </div>
+  </form>
 
+  <hr>
 
-
-
-    
-
+ 
+  <h3 class="mt-4">Scheduled Visitors</h3>
+  <table class="table table-bordered mt-3">
+    <thead class="table-dark">
+      <tr>
+        <th>Visitor Name</th>
+        <th>Mobile Number</th>
+        <th>Vehicle No.</th>
+        <th>Date</th>
+        <th>From Time</th>
+        <th>To Time</th>
+        <th>Gate No.</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of visitorsList; let i = index">
+        <td>{{ v.name }}</td>
+        <td>{{ v.mobile }}</td>
+        <td>{{ v.vehicle }}</td>
+        <td>{{ v.date }}</td>
+        <td>{{ v.fromTime }}</td>
+        <td>{{ v.toTime }}</td>
+        <td>{{ v.gate }}</td>
+        <td>
+          <button class="btn btn-danger btn-sm" (click)="deleteVisit(i)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
