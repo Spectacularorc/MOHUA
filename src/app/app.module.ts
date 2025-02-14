@@ -31,6 +31,7 @@ import {ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
+import { DakManagementInwardComponent } from './dak-management-inward/dak-management-inward.component';
 
 
 
@@ -56,7 +57,8 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     DakManagementOutwardComponent,
     TravelManagementSchedularComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    DakManagementInwardComponent
   
   ],
   imports: [

@@ -12,6 +12,7 @@ import { TravelManagementSchedularComponent } from './travel-management-schedula
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { DakManagementInwardComponent } from './dak-management-inward/dak-management-inward.component';
 
 const routes: Routes = [
 
@@ -29,6 +30,7 @@ const routes: Routes = [
     {path: 'security-accessibility', component: SecurityAndAccessibilityComponent},
     {path: 'notification', component: NotificationComponent},
     {path: 'dak-management-outward', component: DakManagementOutwardComponent},
+    {path: 'dak-management-inward', component: DakManagementInwardComponent},
     {path: 'travel-management-schedular', component: TravelManagementSchedularComponent}
   ]},
 ];
